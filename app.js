@@ -16,7 +16,11 @@ app.get("/todos", (req, res) => {
 //post todos request
 
 app.post("/todos", (req, res) => {
-    const id = data[data.length === 0] ? 1 : data[data.length - 1].id + 1;
+
+    // const id = data[data.length === 0] ? 1 : data[data.length - 1].id + 1;
+
+    const id = data.length === 0 ? 1 : data[data.length - 1].id + 1;
+
     const newTodos = {
         id: id,
         task: req.body.task,
